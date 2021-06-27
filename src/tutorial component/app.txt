@@ -1,0 +1,28 @@
+import React, { useState } from "react";
+import Heading from "./Heading";
+import First from './First';
+import Second from './Second';
+import Third from './Third';
+import Forth from './Forth';
+import Fcs from './Fcs';
+import Fcsone from './Fcsone';
+import Hello from './Hello';
+import Hellotwo from './Hellotwo';
+
+function App() {
+
+  const [toggle, setToggle] = useState(true)
+
+  return (
+    <>
+      {/* <Heading /> */}
+
+      <Hello onClick={() => setToggle(!toggle)} style={{ display: toggle ? 'none' : 'block' }} />
+      <Hellotwo click={() => setToggle(!toggle)} style={{ display: !toggle ? 'none' : 'block' }} />
+
+
+
+    </>
+  );
+}
+export default App;
