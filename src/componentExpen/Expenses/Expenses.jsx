@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './Expenses.css';
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
     const [filteryear, setFilteryear] = useState("2020")
@@ -15,8 +16,13 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpensesFilter selected={filteryear} childToParent={expFilter} />
-            {displayResultOnDropdown.length === 0 ? (<p>Nothing is here</p>) : (
+            <ExpensesChart expenses={displayResultOnDropdown} />
 
-                displayResultOnDropdown.map(m =>
-                    <ExpenseItem
-            
+            <ExpensesList items={displayResultOnDropdown} />
+
+
+        </Card>
+    )
+}
+
+export default Expenses
